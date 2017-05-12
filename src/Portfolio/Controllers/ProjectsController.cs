@@ -14,11 +14,11 @@ namespace Portfolio.Controllers
             return View();
         }
 
-        public IActionResult GetProjects()
-        {
-            var projectList = Project.GetProjects();
-            return Json(projectList);
-        }
+        //public IActionResult GetProjects()
+        //{
+        //    var projectList = Project.GetProjects();
+        //    return Json(projectList);
+        //}
            
     }
 }
