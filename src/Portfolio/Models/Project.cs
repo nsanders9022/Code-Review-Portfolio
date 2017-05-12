@@ -12,29 +12,32 @@ namespace Portfolio.Models
 {
     public class Project
     {
-        public string Id { get; set; }
         public string Url { get; set; }
         public string Stars { get; set; }
+        public string HtmlUrl { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+
 
         public static List<Project> GetProjects()
         {
-            var client = new RestClient("https://api.github.com");
-            var request = new RestRequest("users/nsanders9022/repos", Method.GET);
-            request.AddParameter("Authorization", "Bearer -3e765e54f6c06bc73d85f4fdc7139abfcc1004e7", ParameterType.HttpHeader);
-            request.AddParameter("content type", "application/json", ParameterType.HttpHeader);
-            //request.AddParameter("Accept", "application/vnd.github.v3+json", ParameterType.HttpHeader);
-            //request.AddParameter("sort", "stars");
-            //request.AddParameter("order", "desc");
+            var client = new RestClient("https://api.github.com/");
+            var request = new RestRequest("search/repositories", Method.GET);
+            request.AddParameter("q", "nsanders9022");
+            request.AddParameter("sort", "stars");
+            request.AddParameter("order", "desc");
+            request.AddParameter("per_page", "3");
+            request.AddHeader("Authorization", "token 083a431b2e212e15bb31ff3f7c9ee4ca00527a9f");
             var response = new RestResponse();
             Task.Run(async () =>
             {
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
-            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
-            Console.WriteLine("jsonresponse is " + jsonResponse);
 
+            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
+            Console.WriteLine("json response " + jsonResponse);
             string jsonOutput = jsonResponse["repos"].ToString();
-            //Console.WriteLine(jsonOutput);
+            
             var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonOutput);
             return projectList;
         }
