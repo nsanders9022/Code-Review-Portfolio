@@ -11,13 +11,55 @@
 }
 
 .home-header {
-    height: 500px;
+    height: 100vh;
     width: 100%;
     background-image: url(../Images/florence.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin-top: -20px;
+}
+.words {
+    /*font-family: 'Architects Daughter', cursive;*/
+    /*font-family: 'Coming Soon', cursive;*/
+    font-family: 'Bad Script', cursive;
+    padding-left: 150px;
+    padding-top: 150px;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 
+.words h1{
+    font-size: 72px;
+}
 
+.words h3{
+    font-size: 48px;
+}
+
+.about-header {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../Images/alps.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -20px;
+}
+
+.about-words {
+    color: white;
+    font-family: 'Coming Soon', cursive;
+    background-color: rgba(105,105,105, 0.4);
+    margin-top: 50px;
+    padding: 5%;
+}
+
+.about-words h1 {
+    font-size: 56px;
+}
+
+.about-words p {
+    font-size: 18px;
+}
 
