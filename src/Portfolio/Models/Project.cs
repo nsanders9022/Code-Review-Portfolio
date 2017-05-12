@@ -13,34 +13,27 @@ namespace Portfolio.Models
     public class Project
     {
         public string Url { get; set; }
-        public string Stars { get; set; }
-        public string HtmlUrl { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
 
+        public static List<Project> GetProjects()
+        {
+            var client = new RestClient("https://api.github.com/");
+            var request = new RestRequest("users/nsanders9022/starred", Method.GET);
+            request.AddHeader("User-Agent", "nsanders9022");
+            request.AddHeader("Accept", "application/vnd.github.v3+json");
+            var response = new RestResponse();
+            Task.Run(async () =>
+            {
+                response = await GetResponseContentAsync(client, request) as RestResponse;
+            }).Wait();
 
-        //public static List<Project> GetProjects()
-        //{
-        //    var client = new RestClient("https://api.github.com/");
-        //    var request = new RestRequest("search/repositories", Method.GET);
-        //    request.AddParameter("q", "nsanders9022");
-        //    request.AddParameter("sort", "stars");
-        //    request.AddParameter("order", "desc");
-        //    request.AddParameter("per_page", "3");
-        //    request.AddHeader("Authorization", "token 083a431b2e212e15bb31ff3f7c9ee4ca00527a9f");
-        //    var response = new RestResponse();
-        //    Task.Run(async () =>
-        //    {
-        //        response = await GetResponseContentAsync(client, request) as RestResponse;
-        //    }).Wait();
-
-        //    JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
-        //    Console.WriteLine("json response " + jsonResponse);
-        //    string jsonOutput = jsonResponse["repos"].ToString();
-            
-        //    var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonOutput);
-        //    return projectList;
-        //}
+            var jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
+            Console.WriteLine("response: " + jsonResponse);
+            string jsonOutput = jsonResponse.ToString();
+            var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonOutput);
+            //Console.WriteLine(projectList[0].name);
+            return projectList;
+        }
 
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
         {
