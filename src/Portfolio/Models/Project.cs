@@ -21,6 +21,9 @@ namespace Portfolio.Models
             var request = new RestRequest("users/nsanders9022/starred", Method.GET);
             request.AddHeader("User-Agent", "nsanders9022");
             request.AddHeader("Accept", "application/vnd.github.v3+json");
+            request.AddParameter("sort", "stars");
+            request.AddParameter("order", "desc");
+            request.AddParameter("per_page", "3");
             var response = new RestResponse();
             Task.Run(async () =>
             {
