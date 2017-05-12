@@ -47,7 +47,7 @@
     margin-top: -20px;
 }
 
-.about-words {
+.about-words, .project-words {
     color: white;
     font-family: 'Coming Soon', cursive;
     background-color: rgba(105,105,105, 0.4);
@@ -71,5 +71,10 @@
     background-position: center;
     background-repeat: no-repeat;
     margin-top: -20px;
+}
+
+.project-header a {
+    color: white;
+    font-size: 18px;
 }
 

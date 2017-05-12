@@ -28,10 +28,10 @@ namespace Portfolio.Models
             }).Wait();
 
             var jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
-            Console.WriteLine("response: " + jsonResponse);
+            //Console.WriteLine("json response: " + jsonResponse);
             string jsonOutput = jsonResponse.ToString();
             var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonOutput);
-            //Console.WriteLine(projectList[0].name);
+            //Console.WriteLine("json output: " + projectList[0].name);
             return projectList;
         }
 
