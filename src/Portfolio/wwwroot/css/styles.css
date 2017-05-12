@@ -63,3 +63,13 @@
     font-size: 18px;
 }
 
+.project-header {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../Images/prague.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -20px;
+}
+
