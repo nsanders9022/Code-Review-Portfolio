@@ -210,4 +210,6 @@
 "C:\Users\Nicole Laptop\Desktop\Portfolio\src\Portfolio\Startup.cs"
 "C:\Users\Nicole Laptop\Desktop\Portfolio\src\Portfolio\Controllers\AboutController.cs"
 "C:\Users\Nicole Laptop\Desktop\Portfolio\src\Portfolio\Controllers\HomeController.cs"
+"C:\Users\Nicole Laptop\Desktop\Portfolio\src\Portfolio\Controllers\ProjectsController.cs"
 "C:\Users\Nicole Laptop\Desktop\Portfolio\src\Portfolio\Models\PortfolioDbContext.cs"
+"C:\Users\Nicole Laptop\Desktop\Portfolio\src\Portfolio\Models\Project.cs"
