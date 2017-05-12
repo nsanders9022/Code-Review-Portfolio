@@ -1,3 +1,23 @@
-﻿body {
-    background-color: green;
+﻿.mynavbar {
+    background-color: teal;
 }
+
+.mynavbar a {
+    color: white;
+}
+
+.mynav li a {
+    color: white !important;
+}
+
+.home-header {
+    height: 500px;
+    width: 100%;
+    background-image: url(../Images/florence.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
