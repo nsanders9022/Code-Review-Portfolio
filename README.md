@@ -37,4 +37,4 @@ Contact Nicole Sanders at nsanders9022@gmail.com for any questions, comments, or
 
 *This software is licensed under the MIT license*
 
-Copyright (c) 2017 **_Nicole Sanders**
+Copyright (c) 2017 **_Nicole Sanders_**
